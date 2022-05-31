@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/static/js/main.acd42574.js",
+    "static/media/open.jpeg": "/static/media/open.2f9791dc434e5cd7f4d4.jpeg",
+    "static/media/desk.jpg": "/static/media/desk.62c177698ddd321170c2.jpg",
+    "static/media/table2.png": "/static/media/table2.2b9706fcd5759a3a72a0.png",
+    "static/media/chair.jpg": "/static/media/chair.9b40ca6634e91061906a.jpg",
+    "static/media/book.jpg": "/static/media/book.d4507cd6e642fa7e8ec8.jpg",
+    "static/media/table1.png": "/static/media/table1.4319a7dc4adeb8bb9b75.png",
+    "static/media/macbook2.jpg": "/static/media/macbook2.c28cc2eab3c9ad186209.jpg",
+    "static/media/cup1.jpg": "/static/media/cup1.b8be9df73c757c464160.jpg",
+    "static/media/macbook1.jpg": "/static/media/macbook1.b043ac5998f728d98b51.jpg",
+    "index.html": "/index.html",
+    "main.acd42574.js.map": "/static/js/main.acd42574.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.acd42574.js"
+  ]
+}
