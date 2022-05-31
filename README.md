@@ -22,3 +22,6 @@ Heroku連結: https://reactflaskshoppingapp.herokuapp.com
 2. 後端: 
 * Python Flask
 * Flask-RestFul,Flask-SQLAlchemy
+
+---
+# 功能介紹
