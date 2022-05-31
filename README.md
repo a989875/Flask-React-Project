@@ -16,11 +16,8 @@ Heroku連結: https://reactflaskshoppingapp.herokuapp.com
 ---
 # 使用技術
 ---
-1.前端: 
+1. 前端: 
 * ReactJS
-
-
-
 
 2. 後端: 
 * Python Flask
