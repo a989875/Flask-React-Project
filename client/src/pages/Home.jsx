@@ -14,7 +14,7 @@ function Home(){
     return (<div>
         <Header/>
         <div style={style1}>
-        <div style={style1}><img src={open} width = "1200px" alt="Home"/></div>
+        <div style={style1}><img src={open} width = "1000px" alt="Home" margin="30px"/></div>
         </div>
     </div>)
 };

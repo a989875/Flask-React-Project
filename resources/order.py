@@ -4,6 +4,8 @@ from flask_restful import Resource, reqparse
 from models.order import OrderModel
 from models.item import ItemModel
 
+ORDER_COMPLETE="Order complete!"
+OUT_OF_STOCK ="Out of Stock!"
 
 class SendOrder(Resource):
 
@@ -24,10 +26,10 @@ class SendOrder(Resource):
         data['user']=user
         
         if data['quantity'] > ItemModel.check_item_quantity(data['item']):
-            return {'message':"Out of Stock"},500
+            return {'message':OUT_OF_STOCK},500
         
         order = OrderModel(**data)
         ItemModel.update_item_quantity(data['item'],data['quantity'])
         order.save_to_db()
         
-        return {'message':"Order complete!"},200
+        return {'message':ORDER_COMPLETE},200

@@ -49,7 +49,7 @@ const style4={
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("login", {
+      let res = await fetch("/login", {
         method: "POST",
         headers: {
           'Accept': 'application/json, text/plain, */*',

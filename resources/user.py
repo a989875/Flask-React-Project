@@ -12,6 +12,7 @@ ALREADY_EXISTS_ERROR = "A user with that {} already exists."
 REGISITER_SUCCESSFULLY = "User Regisiter successfully."
 INVALID_CREDENTIALS = "Invalid credentials!"
 USER_LOGGED_OUT = "User successfully logged out."
+USER_NOT_FOUND = 'User Not Found'
 
 
 
@@ -102,4 +103,4 @@ class UserProfile(Resource):
         user = UserModel.find_by_username(username)
         if user:
             return user.json(), 200
-        return {"message": 'User Not Found'}, 404
+        return {"message": USER_NOT_FOUND}, 404

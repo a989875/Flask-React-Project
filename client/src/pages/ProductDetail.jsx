@@ -52,7 +52,8 @@ function ProductDetail() {
     width: "80%",
     height: "38px",
     fontSize:"18px",
-    marginBottom:"20px"
+    marginBottom:"20px",
+    size:3
   }
 
   const style9={
@@ -86,7 +87,11 @@ function ProductDetail() {
       fetchproductDetail();},[])
 
     const url= productDetail.imagelink
-    const numberList = Array.from({length: productDetail.quantity}, (_, i) => i + 1)
+    var numberList =[]
+     if (productDetail.quantity>50) {
+       numberList= Array.from({length: 50}, (_, i) => i + 1)} else {
+        numberList= Array.from({length: productDetail.quantity}, (_, i) => i + 1)
+      }
 
     function handleChanges(e){
       getPurchaseValue(e.target.value)
@@ -119,7 +124,7 @@ function ProductDetail() {
             console.log(err)
             }
           } else {
-            alert("Haven't Login, Please login agian");
+            alert("Haven't Login, Please login");
             navigate('/login')
           }
         };

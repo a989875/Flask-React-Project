@@ -42,7 +42,7 @@ function Products(){
 
     let getCategory = async (e) => {
         try {
-            let category = ["All Categories"]
+            let category = ["All"]
             let res = await fetch("/items/categories", {
                 method: "GET",
                 headers: {
@@ -92,7 +92,7 @@ function Products(){
     let handleClicks = async (e) => {
         let category = e.target.value
         let url = ""
-        if (category==="All Categories"){
+        if (category==="All"){
             url = "/items"
         }else{
            url = "/items/category/"+ e.target.value

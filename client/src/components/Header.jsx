@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link ,useNavigate} from 'react-router-dom'
 import store from "../images/store.png"
+
 
 
 function Header(props){
@@ -32,6 +33,8 @@ function Header(props){
         marginBottom:"10px",
      }
 
+    const navigate = useNavigate();
+
     function Logout(){
         fetch("logout", {
         method: "POST",
@@ -41,7 +44,7 @@ function Header(props){
           "Authorization" : localStorage.getItem('SavedToken')
         }})
         localStorage.removeItem("SavedToken")
-        window.location.reload(false);
+        navigate('/');
     }
 
     
@@ -57,7 +60,7 @@ function Header(props){
             <div style={style3}><Link to="/about">About</Link></div>
             <div style={style3}><Link to="/contact">Contact Us</Link></div>
             <div style={style3}><Link to="/login" >Login</Link></div>
-            <div style={style3}><Link to="/register" >Regisiter</Link></div>
+            <div style={style3}><Link to="/register" >Register</Link></div>
             </div>
         </div>
         <div>

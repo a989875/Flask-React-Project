@@ -58,4 +58,4 @@ api.add_resource(Contact,"/contact")
 api.add_resource(SendOrder,'/send-order')
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run()

@@ -52,7 +52,7 @@ function Register() {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("register", {
+      let res = await fetch("/register", {
         method: "POST",
         headers: {
           'Accept': 'application/json, text/plain, */*',
