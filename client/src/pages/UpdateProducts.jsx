@@ -103,14 +103,14 @@ function UserProfile(){
             />
             <input style={style1}
               required="required" 
-              type="text"
+              type="number"
               value={price}
               placeholder="Product Price"
               onChange={(e) => setPrice(e.target.value)}
             />
             <input style={style1}
               required="required" 
-              type="text"
+              type="number"
               value={quantity}
               placeholder="Product Quantity"
               onChange={(e) => setQuantity(e.target.value)}

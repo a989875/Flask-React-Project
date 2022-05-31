@@ -121,7 +121,7 @@ function Products(){
     useEffect(() => {
         getCategory()
         getProducts();},[])
-
+        console.log(allProductList)
     return (
         <div>
             <div>
@@ -131,7 +131,7 @@ function Products(){
                 {categoryList.map((category,index) =><button key={index} style={ Buttomstyle} value={category} onClick={handleClicks}>{category.toUpperCase()}</button>)}
         </div>
         <div style={style1}>
-         {allProductList.map((product,index) =><ProductItem id={product.id} key={index} img={product.imagelink} price={product.price} name={product.name}/>)}
+        {allProductList.map((product,index) =><ProductItem id={product.id} key={index} img={product.imagelink} price={product.price} name={product.name}/>)}
         </div>
     </div>
     )

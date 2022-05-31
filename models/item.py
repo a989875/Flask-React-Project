@@ -9,12 +9,12 @@ class ItemModel(db.Model):
     __tablename__ = "items"
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=True)
-    price = db.Column(db.Float(precision=2))
+    name = db.Column(db.String(80), unique=True,nullable=False)
+    price = db.Column(db.Float(precision=2),nullable=False)
     quantity = db.Column(db.Integer)
     quantity_left=db.Column(db.Integer)
-    category = db.Column(db.String(80))
-    imagelink = db.Column(db.String(80))
+    category = db.Column(db.String(80),nullable=False)
+    imagelink = db.Column(db.String(80),nullable=False)
     
     
     def __init__(self, name: str, price: float,quantity:int,quantity_left:int,category:str,imagelink:str):
