@@ -117,7 +117,7 @@ function ProductDetail() {
             alert(resJson.message);
             navigate('/products')
           } else{
-            alert("login expired, Please login agian")
+            alert("Login expired, Please login agian")
             navigate('/login')
           }}
           catch (err) {
