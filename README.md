@@ -26,4 +26,14 @@ Heroku連結: https://reactflaskshoppingapp.herokuapp.com
 ---
 # 功能介紹
 
+登入介面
 ![alt](https://github.com/a989875/Flask-React-Project/blob/0e8756d60c242395ae3911ee91d0809adfad3122/README/Login.png)
+
+註冊介面
+![alt](https://github.com/a989875/Flask-React-Project/blob/0bc1538ca60327aac230e7102cce8ee598aa12fa/README/Register.png)
+
+商品展示
+![alt](https://github.com/a989875/Flask-React-Project/blob/0bc1538ca60327aac230e7102cce8ee598aa12fa/README/Products.png)
+
+下單個別商品
+![alt](https://github.com/a989875/Flask-React-Project/blob/0bc1538ca60327aac230e7102cce8ee598aa12fa/README/Product_detail.png)
