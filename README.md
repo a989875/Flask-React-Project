@@ -21,7 +21,8 @@ Heroku連結: https://reactflaskshoppingapp.herokuapp.com
 
 2. 後端: 
 * Python Flask
-* Flask-RestFul,Flask-SQLAlchemy
+* Flask-RestFul,Flask-SQLAlchemy,Flask-JWT
+3. 資料庫: SQLite
 
 ---
 # 功能介紹
