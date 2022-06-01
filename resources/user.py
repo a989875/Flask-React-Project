@@ -9,19 +9,16 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 BLANK_ERROR = "'{}' cannot be blank."
 ALREADY_EXISTS_ERROR = "A user with that {} already exists."
-REGISITER_SUCCESSFULLY = "User Regisiter successfully."
+REGISTER_SUCCESSFULLY = "User Register successfully."
 INVALID_CREDENTIALS = "Invalid credentials!"
 USER_LOGGED_OUT = "User successfully logged out."
 USER_NOT_FOUND = 'User Not Found'
 
 
-
-
-
 class UserRegister(Resource):
     @classmethod
     def post(cls):
-        
+
         user_parser = reqparse.RequestParser()
         user_parser.add_argument(
             "username", type=str, required=True, help=BLANK_ERROR.format("username")
@@ -29,25 +26,25 @@ class UserRegister(Resource):
         user_parser.add_argument(
             "password", type=str, required=True, help=BLANK_ERROR.format("password")
         )
-        
+
         user_parser.add_argument(
             "email", type=str, required=True, help=BLANK_ERROR.format("email")
         )
         user_parser.add_argument(
             "phone", type=str, required=True, help=BLANK_ERROR.format("phone")
         )
-        
+
         data = user_parser.parse_args()
-        
+
         if UserModel.find_by_username(data["username"]):
             return {"message": ALREADY_EXISTS_ERROR.format("username")}, 400
-        
+
         if UserModel.find_by_email(data["email"]):
             return {"message": ALREADY_EXISTS_ERROR.format("email")}, 400
-        
+
         if UserModel.find_by_phone(data["phone"]):
             return {"message": ALREADY_EXISTS_ERROR.format("phone")}, 400
-        
+
         user = UserModel(**data)
         user.password = generate_password_hash(user.password)
         user.save_to_db()
@@ -58,7 +55,6 @@ class UserRegister(Resource):
 class UserLogin(Resource):
     @classmethod
     def post(cls):
-        
         user_parser = reqparse.RequestParser()
         user_parser.add_argument(
             "username", type=str, required=True, help=BLANK_ERROR.format("username")
@@ -66,7 +62,7 @@ class UserLogin(Resource):
         user_parser.add_argument(
             "password", type=str, required=True, help=BLANK_ERROR.format("password")
         )
-        
+
         data = user_parser.parse_args()
         user = UserModel.find_by_username(data["username"])
 
@@ -94,7 +90,8 @@ class TokenRefresh(Resource):
         current_user = get_jwt_identity()
         new_token = create_access_token(identity=current_user, fresh=False)
         return {"access_token": new_token}, 200
-    
+
+
 class UserProfile(Resource):
     @classmethod
     @jwt_required()

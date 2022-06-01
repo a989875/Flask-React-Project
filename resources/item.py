@@ -16,16 +16,15 @@ class Item(Resource):
         "price", type=float, required=True, help=BLANK_ERROR.format("price")
     )
     parser.add_argument(
-        "quantity",type = int ,default= 0
+        "quantity", type=int, default=0
     )
     parser.add_argument(
-        "category",type = str ,default= DEFAULT_VALUE
+        "category", type=str, default=DEFAULT_VALUE
     )
     parser.add_argument(
-        "imagelink",type = str ,default= DEFAULT_VALUE
+        "imagelink", type=str, default=DEFAULT_VALUE
     )
-    
-    
+
     @classmethod
     def get(cls, name: str):
         item = ItemModel.find_by_name(name)
@@ -83,11 +82,11 @@ class ItemList(Resource):
 
 class ItemCategory(Resource):
     @classmethod
-    def get(cls,category):
-        return { "items" :[ item.json() for item  in ItemModel.find_by_category(category)]},200
-    
+    def get(cls, category):
+        return {"items": [item.json() for item in ItemModel.find_by_category(category)]}, 200
+
 
 class ItemCategoryList(Resource):
     @classmethod
     def get(cls):
-        return {"categories": [item[0] for item in ItemModel.get_category_list()]},200
+        return {"categories": [item[0] for item in ItemModel.get_category_list()]}, 200
